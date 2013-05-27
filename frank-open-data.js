@@ -11,10 +11,10 @@
     refresh: true
   };
 
-  var DEBUGGING = false;
+  var DEBUGGING = true;
 
   var started = Date.now();
-  console.log("\n>> " + started + ' Work started...');
+  console.log("\n" + started + ' >> Work started...');
 
   var callbacks = {
     done: function(response) {
@@ -24,25 +24,28 @@
         return;
       }
 
-      if (DEBUGGING) { response.data = response.data.slice(0, 20); }
+      if (DEBUGGING) { response.data = response.data.slice(0, 10); }
       
       var records = [];
-      var complaint = '<empty complaint>';
+      var fields = response.meta.view.columns.map(function(col) { return col.name; });
 
-      $(response.data).each(function(field, value) {
+      $(response.data).each(function(row) {
+        console.error($(row));
 
-        complaint = "FIELD = " + field + " VALUE = " + value;
+        var complaint = {};
+
+        $(row).each(function(i, value) { 
+          //if (DEBUGGING) { console.log($(value), $(fields[i])); }
+          //complaint[fields[i]] = value; 
+          console.error("adding A", fields[i], "to B", value);
+        });
+
         records.push(complaint);
 
-        console.notice('parsing complaint: ' + $(complaint).toJson());
+        console.log('.. parsing complaint.. ', $(complaint));
       });
 
-      console.log(records.length);
-      console.log($(records[0]));
-      console.log(records[0]);
-
-      var total = records.length;
-      console.log("\n>> {0} Finished ({1}) complaints in {2} ms\n\n".format(Date.now(), total, Date.now() - started));
+      console.log("\n>> {0} Finished ({1}) complaints in {2} ms\n\n".format(Date.now(), records.length, Date.now() - started));
     },
 
     fail: Function("console.error('FAILED URL: {0}');".format(options.url))
@@ -56,7 +59,8 @@
     }
   };
 
-  console.log('>> Grabbing latest: ' + options.url);
+  console.log(Date.now().toString() + '>> Grabbing latest: ' + options.url);
+
   Scraper.run(options.url, options.refresh, callbacks);
 
 }(jQuery));
