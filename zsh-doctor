@@ -1,24 +1,18 @@
 #!/bin/sh
 
-# Download Zshell, 
-# Set as default, 
-# Make sure OS running our new zsh NOT the one built in, 
+# Download Zshell,
+# Set as default,
+# Make sure OS running our new zsh NOT the one built in,
 # Configure chsh for user
 # setup oh-my-zsh
 # check/set local/bin path
-<<<<<<< HEAD
-=======
 # update /etc/shells path
->>>>>>> Machine migration still sucks sometimes
 # check SHELL
-# what config exec on new window? 
-# new instance/tab? 
+# what config exec on new window?
+# new instance/tab?
 # interactive shell (ssh)
 # where to put aliases
 # where to put variables
 # commit, deploy to dropbox, symlink
-<<<<<<< HEAD
-#
-=======
 # BDD/TDD with bash/zsh?
->>>>>>> Machine migration still sucks sometimes
+
