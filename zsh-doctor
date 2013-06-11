@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Download Zshell, 
+# Set as default, 
+# Make sure OS running our new zsh NOT the one built in, 
+# Configure chsh for user
+# setup oh-my-zsh
+# check/set local/bin path
+# check SHELL
+# what config exec on new window? 
+# new instance/tab? 
+# interactive shell (ssh)
+# where to put aliases
+# where to put variables
+# commit, deploy to dropbox, symlink
+#
