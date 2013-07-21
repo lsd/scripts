@@ -1,0 +1,3 @@
+#!/bin/sh
+cd "$HOME/bin"
+./open-developer-chrome-process.sh
