@@ -1,6 +1,11 @@
 #!/bin/sh
 
+# Install Xcode
+# Install Xcode cmd line tools
+
 # Download Zshell,
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
 # Set as default,
 # Make sure OS running our new zsh NOT the one built in,
 # Configure chsh for user
@@ -15,4 +20,5 @@
 # where to put variables
 # commit, deploy to dropbox, symlink
 # BDD/TDD with bash/zsh?
+http://scottlab.ucsc.edu/~wgscott/xtal/wiki/index.php/Make_zsh_your_default_user_shell
 
