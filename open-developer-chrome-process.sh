@@ -1,11 +1,12 @@
 #!/bin/sh
 # Isam github.com/lsd
 
-DATA_DIR='~/temp/Chrome'
+#DATA_DIR="`dirname ~`/`basename ~`/temp/Chrome"
+DATA_DIR="$HOME/temp/Chrome"
 CHROME='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 SWITCHES="\
-  --user-data-dir='$DATA_DIR' \
+  --user-data-dir=${DATA_DIR} \
   --disable-prompt-on-repost \
   --disable-popup-blocking \
   --keep-alive-for-test \
