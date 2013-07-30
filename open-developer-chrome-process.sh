@@ -10,7 +10,6 @@ SWITCHES="\
   --disable-prompt-on-repost \
   --disable-popup-blocking \
   --keep-alive-for-test \
-  --disable-extensions \
   --no-default-browser-check \
   --no-first-run \
   --disable-login-animations \
@@ -28,6 +27,8 @@ SWITCHES="\
   --no-swap-metrics \
   --disable-full-history-sync\
 "
+
+#  --disable-extensions \
 
 echo "Opening clean Google Chrome\n"
 echo "* chrome binary: $CHROME"
