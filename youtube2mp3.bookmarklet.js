@@ -1,0 +1,1 @@
+javascript:/*github.com/lsd bookmarklet to DL mp3 of youtube vid you're watching*/(function(){var id=0;id=location.href.match(/(embed\/|v=|\/v\/)(.+?)(#|&|\?|\/|$)/);if(id){window.open('http://www.youtube-mp3.org/get?video_id='+id[2], '','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=670,height=390');}}())
