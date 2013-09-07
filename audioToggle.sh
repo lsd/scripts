@@ -1,17 +1,29 @@
 #!/bin/sh
 # Isam github.com/lsd | 08/05/2013 public domain
-# Uses AudioSwitcher (audioswitcher-osx) to toggle 
-# between 2 audio sources
+# Uses AudioSwitcher to toggle bwt 2 audio sources
+# REQUIRE:
+#   AudioSwitcher
+#   http://github.com/deweller/switchaudio-osx
 
-#CURRENT="`~/bin/AudioSwitcher -c`"
+# SUGGEST:
+#   Growl version 2.x OR 1.x
+#   growlnotify (avail for 2.x and 1.x)
+#   http://growl.info/downloads#generaldownloads
+
+BIN="AudioSwitcher"
 SPEAKERS='Built-in Output'
 HEADPHONES='Sound Blaster Tactic(3D) Alpha'
 
-~/bin/AudioSwitcher -c | grep "$SPEAKERS"
+CURRENT="`$BIN -c`"
+
+"$BIN" -c | grep "$SPEAKERS"
 if [ $? -eq 0 ]; then
-  ~/bin/AudioSwitcher -s "$HEADPHONES"
+  "$BIN" -s "$HEADPHONES" > /dev/null
 else
-  ~/bin/AudioSwitcher -s "$SPEAKERS"
+  "$BIN" -s "$SPEAKERS" > /dev/null
 fi
 
-echo "Switched to `~/bin/AudioSwitcher -c`"
+"growlnotify" -v 2>&1 /dev/null
+if [ $? -eq 0 ]; then
+  growlnotify -t "Audio Out Now" -m "`$BIN -c`"
+fi
