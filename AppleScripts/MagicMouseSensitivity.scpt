@@ -12,12 +12,13 @@
 --  I have a fast machine so the delays are set low. Try 0.2 - 0.3
 --  if you encounter issues (i.e., trying to click 'Mouse' before
 --  sys prefs has loaded)
---  Also, HOW I access sys preferences (keystroke ","…) is likely 
+--  Also, HOW I access sys preferences (keystroke ","…) is likely
 --  to differ is unlikely to exist on your machine.
 
 -- Licensed under WTFPL
 
-tell application "System Events"
+tell application "System Preferences"
+  activate
   click UI element "Finder" of list 1 of application process "Dock"
 
   delay 0.12
