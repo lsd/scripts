@@ -2,7 +2,7 @@
 # Isam github.com/lsd
 
 #DATA_DIR="`dirname ~`/`basename ~`/temp/Chrome"
-DATA_DIR="$HOME/temp/Chrome"
+DATA_DIR="$HOME/temp/Chrome/QAProfile"
 CHROME='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 SWITCHES="\
@@ -38,7 +38,7 @@ for switch in $SWITCHES; do echo $switch; done
 echo "\n* More switches @ http://peter.sh/experiments/chromium-command-line-switches/\n"
 
 #echo "Proceed? (hit the Any key.)" && read
-# mkdir -p $DATA_DIR
+#mkdir -p $DATA_DIR
 
-"$CHROME" 2> /dev/null $SWITCHES
+"$CHROME" #2> /dev/null $SWITCHES
 echo "Chrome returned $?"
